@@ -1,0 +1,254 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background for minimalist look */
+    color: #f5f5f5; /* Light color for text */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background-color: #212121; /* Dark Grey Background */
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #bdbdbd; /* Grey text */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffb74d; /* Warm Golden Hover */
+    transform: scale(1.1);
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Updated Section Spacing */
+section {
+    padding: 15px 20px; /* Reduced padding for inner spacing */
+    margin-top: 20px; /* Further reduced margin-top for tighter section spacing */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+section:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+section:nth-child(even) {
+    animation-delay: 0.6s;
+}
+
+/* Card Styling */
+.card {
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 15px; /* Reduced padding inside cards */
+    margin: 15px 0; /* Reduced margin between cards */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.card h3 {
+    color: #ffb74d;
+    margin-bottom: 8px; /* Reduced spacing below headings */
+}
+
+.card p {
+    font-size: 0.95rem; /* Slightly smaller font for compact look */
+    color: #ddd;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Header and Footer Adjustments */
+header {
+    padding: 15px 0; /* Reduced header padding */
+}
+
+footer {
+    padding: 15px 0; /* Reduced footer padding */
+    margin-top: 30px; /* Reduced spacing before footer */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h2 {
+    font-size: 2rem;
+    color: #ffb74d; /* Golden Color for headers */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card {
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.card h3 {
+    color: #ffb74d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Button Hover Animation */
+.btn {
+    display: inline-block;
+    text-decoration: none; /* Removes underline */
+    background-color: #0077b5; /* LinkedIn blue */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+    
+
+
+.btn:hover {
+    background-color: #005582; /* Darker blue on hover */
+    color: #ffffff; /* Ensure white text remains on hover */
+}
+
+
+/* Scroll-to-Top Button */
+#scrollToTopBtn {
+    background-color: #ffb74d;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #ff9800;
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #212121;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Scroll Effect */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+
