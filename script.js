@@ -36,13 +36,17 @@ window.onscroll = function() {
 
     // Animate sections on scroll
     const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (sectionTop < windowHeight * 0.75) {
-            section.classList.add('visible');
-        }
-    });
+    const animateSections = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(animateSections, { threshold: 0.1 });
+    sections.forEach(section => sectionObserver.observe(section));
 };
 
 function scrollToTop() {
@@ -175,22 +179,6 @@ skillCards.forEach(card => {
     });
 });
 
-// Add a typing effect to the header
-const headerTitle = document.querySelector('header h1');
-const headerText = headerTitle.textContent;
-headerTitle.textContent = '';
-let i = 0;
-
-function typeWriter() {
-    if (i < headerText.length) {
-        headerTitle.textContent += headerText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-    }
-}
-
-// Start the typing effect when the page loads
-window.addEventListener('load', typeWriter);
 
 // Add a scroll progress indicator
 const progressBar = document.createElement('div');
@@ -203,5 +191,12 @@ window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const progress = (scrolled / documentHeight) * 100;
     progressBar.style.width = `${progress}%`;
+});
+
+// Animate skill bars on page load
+window.addEventListener('load', () => {
+    skillLevels.forEach(level => {
+        level.style.width = level.getAttribute('data-level');
+    });
 });
 
