@@ -95,9 +95,10 @@ nav ul li a:hover::after {
 /* Section Styling */
 .section {
     padding: 80px 0;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1; /* Update 2: Ensure section visibility */
+    transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeIn 0.5s ease-out; /* Update 3: Add fade-in animation */
 }
 
 .section.visible {
@@ -196,7 +197,7 @@ nav ul li a:hover::after {
     transition: width 1s ease-in-out;
 }
 
-/* Button Styling *//* Button Styling */
+/* Button Styling */
 .btn {
     display: inline-block;
     padding: 12px 24px;
